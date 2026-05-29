@@ -16,7 +16,7 @@
 
 ---
 
-> **Rolling swells, crashing shorebreak, and drifting sea-spray that make Minecraft's coastlines feel alive** — the *Wavify* wave mod, faithfully ported to **MinecraftForge** for the **26.1** generation.
+> **Rolling swells, crashing shorebreak, and drifting sea-spray that make Minecraft's coastlines feel alive** — the *Wavify* wave mod, faithfully ported to **Forge** for the **26.1** generation.
 
 Beaches and oceans in vanilla Minecraft are flat and still. **Forge-Wavify** scans the water around you and spawns animated waves that roll toward the shore, swell up near beaches, break against the terrain, and toss spray and foam into the air — all client-side, with zero impact on your server.
 
@@ -49,7 +49,7 @@ Beaches and oceans in vanilla Minecraft are flat and still. **Forge-Wavify** sca
 ## 📥 Installation
 
 1. Make sure you're on **Minecraft 26.1.x** with **Java 25** (shipped with the game).
-2. Install **MinecraftForge** for your exact version (see [Compatibility](#-compatibility)).
+2. Install **Forge** for your exact version (see [Compatibility](#-compatibility)).
 3. Download the latest `forge-wavify` jar from the [**Releases**](../../releases) page.
 4. Drop it into your `mods/` folder.
 5. Launch the game and head to a beach or ocean — the waves roll in on their own. 🌊
@@ -100,7 +100,7 @@ Requires the **Java 25** toolchain (Gradle auto-provisions it) and **Gradle 9.3.
 
 <br/>
 
-This is a port of the **Wavify** client mod from **Fabric** to **classic MinecraftForge**. The wave simulation, rendering, chunk scanning, and particles are faithful to the original; only the loader-specific glue was rewritten. Minecraft 26.1+ ships **de-obfuscated** (real names, no SRG), so every `net.minecraft.*` reference is identical between loaders — no remapping, no Mixin refmap.
+This is a port of the **Wavify** client mod from **Fabric** to **classic Forge**. The wave simulation, rendering, chunk scanning, and particles are faithful to the original; only the loader-specific glue was rewritten. Minecraft 26.1+ ships **de-obfuscated** (real names, no SRG), so every `net.minecraft.*` reference is identical between loaders — no remapping, no Mixin refmap.
 
 | Concern | Fabric original | Forge port |
 |:--|:--|:--|
