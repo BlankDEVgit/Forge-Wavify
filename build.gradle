@@ -1,0 +1,85 @@
+// Wavify — Forge port.
+//
+// Based on the official MinecraftForge 26.1 MDK and the MDKExamples AccessTransformer/Mixin samples:
+//   https://github.com/MinecraftForge/MinecraftForge/tree/26.1/mdk
+//   https://github.com/MinecraftForge/MDKExamples
+//
+// Minecraft 26.1+ ships de-obfuscated (real class/field/method names), so there is no SRG remapping,
+// no Mixin refmap, and access transformers / mixins reference the real names directly.
+
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '[7.0.23,8.0)'
+}
+
+version = mod_version
+group = mod_group
+base.archivesName = mod_id
+
+// Mojang ships Java 25 to end users in 26.1+, so the mod targets Java 25.
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+minecraft {
+    // Enables access transformers: ForgeGradle looks for META-INF/accesstransformer.cfg in every
+    // source set and applies it to the Minecraft dependency. Mirrors the original wavify.accesswidener.
+    accessTransformer = true
+
+    // "official" mappings == Mojang's names. On 26.1+ the game is already de-obfuscated, so this is
+    // effectively an identity mapping, but the channel still has to be declared.
+    mappings channel: 'official', version: minecraft_version
+
+    runs {
+        configureEach {
+            workingDir = layout.projectDirectory.dir('run')
+            systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+            systemProperty 'forge.enabledGameTestNamespaces', mod_id
+            // Tell Mixin which config to load when running from the dev workspace. In the built jar
+            // this is provided through the MixinConfigs manifest attribute (see the jar task below).
+            args "--mixin.config=${mod_id}.mixins.json"
+        }
+        register('client')
+        register('server') {
+            args '--nogui'
+        }
+    }
+}
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+}
+
+dependencies {
+    implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
+
+    // Generates the Mixin refmap and validates the mixin annotations at compile time.
+    annotationProcessor 'org.spongepowered:mixin:0.8.7:processor'
+
+    // Optional: compile-time validator for @SubscribeEvent handlers shipped with the Forge MDK.
+    // Uncomment and pin to the eventbus version of your installed MDK if you want strict checks.
+    // annotationProcessor 'net.minecraftforge:eventbus-validator:7.0.1'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    // UTF-8 is the default on Java 18+, but pin it so encoding never depends on the build machine.
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('jar', Jar) {
+    manifest {
+        attributes([
+            // Lets Forge's bundled Mixin platform discover the config inside the built jar.
+            'MixinConfigs'          : "${mod_id}.mixins.json",
+            'Specification-Title'   : mod_id,
+            'Specification-Vendor'  : 'Superkat32',
+            'Specification-Version' : '1',
+            'Implementation-Title'  : project.name,
+            'Implementation-Version': project.version,
+            'Implementation-Vendor' : 'Superkat32'
+        ])
+    }
+}

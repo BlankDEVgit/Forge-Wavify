@@ -1,0 +1,6 @@
+plugins {
+    // Lets the Java toolchain auto-provision the required JDK (Java 25) if it is missing.
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+rootProject.name = 'wavify'

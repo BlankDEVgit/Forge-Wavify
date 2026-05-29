@@ -1,0 +1,24 @@
+# Gradle / build
+.gradle/
+build/
+out/
+run/
+run-data/
+src/generated/
+
+# IDE
+.idea/
+*.iml
+.eclipse/
+.settings/
+.classpath
+.project
+eclipse/
+.vscode/
+
+# Port scratch artifacts (not part of the mod)
+/decompiled/
+/extracted/
+/cfr.jar
+/wavify-1.0.0.jar
+*.log
