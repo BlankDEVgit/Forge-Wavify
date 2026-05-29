@@ -40,7 +40,7 @@ Beaches and oceans in vanilla Minecraft are flat and still. **Forge-Wavify** sca
 
 <div align="center">
 
-<img src="docs/demo.gif" width="800" alt="Forge-Wavify in-game demo — waves rolling onto a beach"/>
+<img src="docs/demo.gif" width="600" alt="Forge-Wavify in-game demo — waves rolling onto a beach"/>
 
 </div>
 
