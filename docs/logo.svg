@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Forge-Wavify — beach waves">
+  <defs>
+    <clipPath id="round"><rect width="512" height="512" rx="108"/></clipPath>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cdeeff"/>
+      <stop offset="1" stop-color="#eef9ff"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#27b3e8"/>
+      <stop offset="0.55" stop-color="#1186c2"/>
+      <stop offset="1" stop-color="#0a5f96"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8e8ba"/>
+      <stop offset="1" stop-color="#e7cd8f"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff6cf"/>
+      <stop offset="1" stop-color="#ffd25e"/>
+    </radialGradient>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <!-- sky -->
+    <rect width="512" height="512" fill="url(#sky)"/>
+
+    <!-- sun + soft glow -->
+    <circle cx="374" cy="140" r="94" fill="#ffe9a8" opacity="0.45"/>
+    <circle cx="374" cy="140" r="60" fill="url(#sun)"/>
+
+    <!-- sea -->
+    <rect x="0" y="232" width="512" height="280" fill="url(#sea)"/>
+
+    <!-- foamy wave crests rolling across the water -->
+    <path d="M -20 288 q 32 -16 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0"
+          fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" opacity="0.52"/>
+    <path d="M -20 322 q 32 -13 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0"
+          fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.40"/>
+    <path d="M -20 354 q 32 -10 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0 t 64 0"
+          fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.30"/>
+
+    <!-- beach sand with a wavy shoreline -->
+    <path d="M -20 396 q 40 -22 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 L 560 512 L -20 512 Z"
+          fill="url(#sand)"/>
+
+    <!-- breaking foam where the waves wash up the beach -->
+    <path d="M -20 396 q 40 -22 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0"
+          fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" opacity="0.88"/>
+    <path d="M -20 420 q 40 -16 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0"
+          fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.45"/>
+  </g>
+</svg>

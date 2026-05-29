@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src="src/main/resources/icon.png" width="120" alt="Forge-Wavify"/>
+<img src="docs/logo.svg" width="140" alt="Forge-Wavify"/>
 
 # 🌊 Forge-Wavify
 
 ### Ambient ocean &amp; beach waves for Minecraft — on Forge.
 
 [![Minecraft](https://img.shields.io/badge/Minecraft-26.1.x-62B47A?style=for-the-badge)](https://www.minecraft.net/)
-[![Forge](https://img.shields.io/badge/MinecraftForge-62 · 63 · 64-314867?style=for-the-badge)](https://files.minecraftforge.net/)
+[![Forge](https://img.shields.io/badge/MinecraftForge-26.1.x-314867?style=for-the-badge)](https://files.minecraftforge.net/)
 [![Java](https://img.shields.io/badge/Java-25-f89820?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
 [![License](https://img.shields.io/badge/License-MIT-3DA639?style=for-the-badge)](LICENSE)
 [![Side](https://img.shields.io/badge/Client--only-✔-8e44ad?style=for-the-badge)](#-compatibility)
@@ -36,9 +36,10 @@ Beaches and oceans in vanilla Minecraft are flat and still. **Forge-Wavify** sca
 
 <br/>
 
-## 📸 Screenshots
+## 📸 Showcase
 
-> _Coming soon — drop your own captures in a `docs/` folder and link them here._
+<!-- DEMO: in-game gameplay video goes here (see the repo's Showcase setup). -->
+> _In-game demo coming shortly._
 
 <br/>
 
